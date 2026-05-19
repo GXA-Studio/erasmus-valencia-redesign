@@ -18,10 +18,10 @@ export default function Newsletter() {
   };
 
   return (
-    <section style={{ background: 'var(--paper)', padding: '5rem 0' }}>
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-24 lg:py-28" style={{ background: 'var(--paper)' }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          className="rounded-3xl px-8 py-14 md:px-16 relative overflow-hidden"
+          className="rounded-3xl px-10 py-16 md:px-20 relative overflow-hidden"
           style={{ background: 'var(--ink)' }}
         >
           {/* Decorative blob */}
@@ -30,18 +30,18 @@ export default function Newsletter() {
           <div className="absolute bottom-0 left-0 w-64 h-64 pointer-events-none opacity-10"
             style={{ background: 'radial-gradient(circle, var(--azure) 0%, transparent 65%)', transform: 'translate(-30%, 30%)' }} />
 
-          <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+          <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <p className="section-eyebrow mb-5" style={{ color: 'rgba(255,255,255,.35)' }}>
+              <p className="section-eyebrow mb-6" style={{ color: 'rgba(255,255,255,.35)' }}>
                 <span style={{ background: 'rgba(255,255,255,.2)', height: '2px', width: '2rem', display: 'inline-block', borderRadius: '1px' }} />
                 Newsletter semanal
               </p>
-              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem,4vw,3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.12, marginBottom: '1rem' }}>
+              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem,4vw,3rem)', fontWeight: 700, color: '#fff', lineHeight: 1.12, marginBottom: '1.25rem' }}>
                 No te pierdas
                 <br />
                 <em style={{ fontStyle: 'italic', color: 'var(--terra)' }}>nada de Valencia.</em>
               </h2>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'rgba(255,255,255,.5)', lineHeight: 1.7 }}>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'rgba(255,255,255,.5)', lineHeight: 1.8 }}>
                 Eventos, pisos disponibles, viajes y descuentos cada semana.
                 Sin spam, solo lo que importa para tu Erasmus.
               </p>
@@ -96,7 +96,7 @@ export default function Newsletter() {
               )}
 
               {/* Trust badges */}
-              <div className="grid grid-cols-3 gap-4 mt-8 pt-8" style={{ borderTop: '1px solid rgba(255,255,255,.08)' }}>
+              <div className="grid grid-cols-3 gap-4 mt-10 pt-10" style={{ borderTop: '1px solid rgba(255,255,255,.08)' }}>
                 {[['5k+', 'suscriptores'], ['Semanal', 'frecuencia'], ['0%', 'spam']].map(([v, l]) => (
                   <div key={l} className="text-center">
                     <p className="num-stat" style={{ fontSize: '1.5rem', color: '#fff', lineHeight: 1 }}>{v}</p>

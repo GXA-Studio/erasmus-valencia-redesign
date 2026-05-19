@@ -2,17 +2,17 @@ import { TESTIMONIALS, STATS } from '@/data/content';
 
 export default function Testimonials() {
   return (
-    <section style={{ background: 'var(--ink)', padding: '6rem 0', overflow: 'hidden' }}>
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-24 lg:py-28" style={{ background: 'var(--ink)', overflow: 'hidden' }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
           {/* Left: headline + stats */}
           <div>
-            <p className="section-eyebrow mb-6" style={{ color: 'rgba(255,255,255,.35)' }}>
+            <p className="section-eyebrow mb-7" style={{ color: 'rgba(255,255,255,.35)' }}>
               <span style={{ background: 'rgba(255,255,255,.2)', height: '2px', width: '2rem', display: 'inline-block', borderRadius: '1px' }} />
               Lo dicen ellos
             </p>
-            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.25rem,4vw,3.5rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, marginBottom: '2rem' }}>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.25rem,4vw,3.5rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, marginBottom: '2.5rem' }}>
               Más de{' '}
               <em style={{ fontStyle: 'italic', color: 'var(--terra)' }}>50.000</em>
               <br />
@@ -35,48 +35,48 @@ export default function Testimonials() {
             </div>
 
             {/* Mini stats */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-5">
               {[
                 ['98%', 'Recomendarían Erasmus Life'],
                 ['2h', 'Tiempo medio de respuesta'],
                 ['7', 'Ciudades en España'],
                 ['2007', 'Año de fundación'],
               ].map(([v, l]) => (
-                <div key={l} className="px-4 py-4 rounded-xl" style={{ background: 'rgba(255,255,255,.05)', border: '1px solid rgba(255,255,255,.08)' }}>
+                <div key={l} className="px-5 py-5 rounded-xl" style={{ background: 'rgba(255,255,255,.05)', border: '1px solid rgba(255,255,255,.08)' }}>
                   <p className="num-stat" style={{ fontSize: '1.75rem', color: '#fff', lineHeight: 1 }}>{v}</p>
-                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '.8125rem', color: 'rgba(255,255,255,.45)', marginTop: '.25rem', lineHeight: 1.45 }}>{l}</p>
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '.875rem', color: 'rgba(255,255,255,.45)', marginTop: '.5rem', lineHeight: 1.5 }}>{l}</p>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Right: testimonial cards */}
-          <div className="grid sm:grid-cols-2 gap-4">
+          <div className="grid sm:grid-cols-2 gap-6">
             {TESTIMONIALS.map((t, i) => (
               <div
                 key={i}
-                className={`p-5 rounded-2xl flex flex-col ${i === 1 ? 'sm:mt-8' : ''}`}
+                className={`p-7 rounded-2xl flex flex-col ${i === 1 ? 'sm:mt-10' : ''}`}
                 style={{ background: 'rgba(255,255,255,.05)', border: '1px solid rgba(255,255,255,.08)' }}
               >
                 {/* Quote */}
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '.9rem', color: 'rgba(255,255,255,.65)', lineHeight: 1.7, flex: 1, fontStyle: 'italic', marginBottom: '1.25rem' }}>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '.9375rem', color: 'rgba(255,255,255,.65)', lineHeight: 1.8, flex: 1, fontStyle: 'italic', marginBottom: '1.5rem' }}>
                   "{t.text}"
                 </p>
 
                 {/* Author */}
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
-                    style={{ background: 'var(--terra)', fontFamily: 'var(--font-display)', fontWeight: 700, color: '#fff', fontSize: '.9rem' }}>
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
+                    style={{ background: 'var(--terra)', fontFamily: 'var(--font-display)', fontWeight: 700, color: '#fff', fontSize: '.9375rem' }}>
                     {t.name[0]}
                   </div>
                   <div>
-                    <p style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '.875rem', color: '#fff' }}>
+                    <p style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '.9375rem', color: '#fff' }}>
                       {t.name} {t.flag}
                     </p>
-                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '.75rem', color: 'rgba(255,255,255,.4)' }}>
+                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '.8125rem', color: 'rgba(255,255,255,.4)', marginTop: '.15rem' }}>
                       {t.uni}
                     </p>
-                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '.6875rem', color: 'rgba(217,94,42,.7)', marginTop: '.1rem' }}>
+                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '.75rem', color: 'rgba(217,94,42,.7)', marginTop: '.1rem' }}>
                       {t.semester}
                     </p>
                   </div>

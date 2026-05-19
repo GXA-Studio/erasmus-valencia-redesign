@@ -39,18 +39,18 @@ export default function ContactoPage() {
     <main style={{ background: 'var(--paper)', minHeight: '100vh', paddingTop: '5.5rem' }}>
 
       {/* Hero */}
-      <section style={{ background: 'var(--ink)', padding: '5rem 0 4rem' }}>
-        <div className="max-w-7xl mx-auto px-6">
-          <p className="section-eyebrow mb-5" style={{ color: 'rgba(255,255,255,.35)' }}>
+      <section className="py-20 lg:py-24" style={{ background: 'var(--ink)' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="section-eyebrow mb-6" style={{ color: 'rgba(255,255,255,.35)' }}>
             <span style={{ background: 'rgba(255,255,255,.2)', height: '2px', width: '2rem', display: 'inline-block', borderRadius: '1px' }} />
             Contacto
           </p>
-          <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem,5vw,4rem)', fontWeight: 800, color: '#fff', lineHeight: 1.08, maxWidth: '28rem', marginBottom: '1rem' }}>
+          <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem,5vw,4rem)', fontWeight: 800, color: '#fff', lineHeight: 1.08, maxWidth: '28rem', marginBottom: '1.5rem' }}>
             Estamos aquí
             <br />
             <em style={{ fontStyle: 'italic', color: 'var(--terra)' }}>para ayudarte.</em>
           </h1>
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'rgba(255,255,255,.45)', maxWidth: '34rem', lineHeight: 1.7 }}>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'rgba(255,255,255,.45)', maxWidth: '36rem', lineHeight: 1.8 }}>
             Respuesta media: 2 horas. También puedes pasarte por la{' '}
             <strong style={{ color: 'rgba(255,255,255,.7)' }}>oficina púrpura</strong> de lunes a viernes.
           </p>
@@ -58,27 +58,27 @@ export default function ContactoPage() {
       </section>
 
       {/* Main grid */}
-      <section style={{ padding: '5rem 0' }}>
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-5 gap-10 items-start">
+      <section className="py-24 lg:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-5 gap-12 items-start">
 
             {/* Left: info */}
-            <div className="lg:col-span-2 space-y-5">
-              <div className="card-base p-6" style={{ borderRadius: 'var(--radius-lg)' }}>
-                <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.25rem', color: 'var(--ink)', marginBottom: '1.5rem' }}>
+            <div className="lg:col-span-2 space-y-6">
+              <div className="card-base p-8" style={{ borderRadius: 'var(--radius-lg)' }}>
+                <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.375rem', color: 'var(--ink)', marginBottom: '2rem' }}>
                   Información de contacto
                 </h2>
-                <div className="space-y-4">
+                <div className="space-y-6">
                   {INFO.map((item) => (
-                    <div key={item.label} className="flex items-start gap-3">
-                      <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'var(--terra-pale)' }}>
+                    <div key={item.label} className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'var(--terra-pale)' }}>
                         <span style={{ color: 'var(--terra)' }}>{item.icon}</span>
                       </div>
                       <div>
-                        <p style={{ fontFamily: 'var(--font-body)', fontSize: '.75rem', fontWeight: 700, letterSpacing: '.06em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '.2rem' }}>
+                        <p style={{ fontFamily: 'var(--font-body)', fontSize: '.75rem', fontWeight: 700, letterSpacing: '.06em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '.35rem' }}>
                           {item.label}
                         </p>
-                        <p style={{ fontFamily: 'var(--font-body)', fontSize: '.9375rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+                        <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'var(--text-secondary)', lineHeight: 1.55 }}>
                           {item.value}
                         </p>
                       </div>
@@ -102,7 +102,7 @@ export default function ContactoPage() {
               </a>
 
               {/* Map placeholder */}
-              <div className="card-base overflow-hidden" style={{ borderRadius: 'var(--radius-lg)', height: '180px', background: 'var(--paper-2)' }}>
+              <div className="card-base overflow-hidden" style={{ borderRadius: 'var(--radius-lg)', height: '200px', background: 'var(--paper-2)' }}>
                 <div className="w-full h-full flex flex-col items-center justify-center gap-2">
                   <MapPin className="w-8 h-8" style={{ color: 'var(--terra)' }} />
                   <p style={{ fontFamily: 'var(--font-body)', fontSize: '.875rem', color: 'var(--text-secondary)', textAlign: 'center', padding: '0 1.5rem' }}>
@@ -115,9 +115,9 @@ export default function ContactoPage() {
 
             {/* Right: form */}
             <div className="lg:col-span-3">
-              <div className="card-base p-8" style={{ borderRadius: 'var(--radius-lg)' }}>
+              <div className="card-base p-10" style={{ borderRadius: 'var(--radius-lg)' }}>
                 {sent ? (
-                  <div className="flex flex-col items-center gap-5 py-12 text-center">
+                  <div className="flex flex-col items-center gap-6 py-16 text-center">
                     <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{ background: '#22C55E' }}>
                       <Check className="w-8 h-8 text-white" />
                     </div>
@@ -132,13 +132,13 @@ export default function ContactoPage() {
                   </div>
                 ) : (
                   <>
-                    <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.375rem', color: 'var(--ink)', marginBottom: '.5rem' }}>
+                    <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.5rem', color: 'var(--ink)', marginBottom: '.625rem' }}>
                       Envíanos un mensaje
                     </h2>
-                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '.9375rem', color: 'var(--text-secondary)', marginBottom: '2rem' }}>
+                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'var(--text-secondary)', marginBottom: '2.5rem', lineHeight: 1.65 }}>
                       Cuéntanos en qué podemos ayudarte.
                     </p>
-                    <form onSubmit={handleSubmit} className="space-y-4">
+                    <form onSubmit={handleSubmit} className="space-y-5">
                       <div className="grid sm:grid-cols-2 gap-4">
                         <div>
                           <label style={{ fontFamily: 'var(--font-body)', fontSize: '.8125rem', fontWeight: 600, color: 'var(--text-secondary)', display: 'block', marginBottom: '.4rem' }}>

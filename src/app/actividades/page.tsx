@@ -54,27 +54,27 @@ export default function ActividadesPage() {
     <main style={{ background: 'var(--paper)', minHeight: '100vh', paddingTop: '5.5rem' }}>
 
       {/* Hero */}
-      <section style={{ background: 'var(--ink)', padding: '5rem 0 4rem', position: 'relative', overflow: 'hidden' }}>
+      <section className="py-20 lg:py-24" style={{ background: 'var(--ink)', position: 'relative', overflow: 'hidden' }}>
         <div className="absolute top-0 right-0 w-[500px] h-[500px] pointer-events-none"
           style={{ background: 'radial-gradient(circle, rgba(217,94,42,.1) 0%, transparent 65%)', transform: 'translate(15%, -15%)' }} />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] pointer-events-none"
           style={{ background: 'radial-gradient(circle, rgba(26,86,209,.08) 0%, transparent 65%)', transform: 'translate(-15%, 15%)' }} />
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <p className="section-eyebrow mb-5" style={{ color: 'rgba(255,255,255,.35)' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <p className="section-eyebrow mb-6" style={{ color: 'rgba(255,255,255,.35)' }}>
             <span style={{ background: 'rgba(255,255,255,.2)', height: '2px', width: '2rem', display: 'inline-block', borderRadius: '1px' }} />
             Actividades & Fiestas
           </p>
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem,5vw,4rem)', fontWeight: 800, color: '#fff', lineHeight: 1.08, marginBottom: '1.25rem' }}>
+              <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem,5vw,4rem)', fontWeight: 800, color: '#fff', lineHeight: 1.08, marginBottom: '1.5rem' }}>
                 Vive Valencia
                 <br />
                 <em style={{ fontStyle: 'italic', color: 'var(--terra)' }}>al máximo.</em>
               </h1>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'rgba(255,255,255,.5)', lineHeight: 1.7, marginBottom: '2rem' }}>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'rgba(255,255,255,.5)', lineHeight: 1.8, marginBottom: '2.5rem' }}>
                 Fiestas, excursiones, viajes y actividades culturales. Organizado por el equipo de Erasmus Life desde 2007 para que tu semestre en Valencia sea inolvidable.
               </p>
-              <div className="flex gap-3">
+              <div className="flex gap-4">
                 <a href={`https://wa.me/${BRAND.whatsapp.replace(/\D/g, '')}?text=Me%20interesan%20las%20actividades`}
                   target="_blank" rel="noopener noreferrer"
                   className="btn btn-terra">
@@ -86,16 +86,16 @@ export default function ActividadesPage() {
                 </Link>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-5">
               {[
                 ['Fiestas', 'mensuales'],
                 ['Excursiones', 'a toda España'],
                 ['Cultura', 'con descuento'],
                 ['Viajes', 'con seguro'],
               ].map(([v, l]) => (
-                <div key={v} className="px-5 py-5 rounded-2xl" style={{ background: 'rgba(255,255,255,.05)', border: '1px solid rgba(255,255,255,.08)' }}>
+                <div key={v} className="px-6 py-6 rounded-2xl" style={{ background: 'rgba(255,255,255,.05)', border: '1px solid rgba(255,255,255,.08)' }}>
                   <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.375rem', color: '#fff', lineHeight: 1, fontStyle: 'italic' }}>{v}</p>
-                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '.8125rem', color: 'rgba(255,255,255,.4)', marginTop: '.25rem' }}>{l}</p>
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '.875rem', color: 'rgba(255,255,255,.4)', marginTop: '.5rem' }}>{l}</p>
                 </div>
               ))}
             </div>
@@ -104,19 +104,19 @@ export default function ActividadesPage() {
       </section>
 
       {/* Próximos eventos */}
-      <section style={{ background: 'var(--paper-2)', padding: '4rem 0' }}>
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-between mb-8">
+      <section className="py-20 lg:py-24" style={{ background: 'var(--paper-2)' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between mb-12">
             <div>
-              <p className="section-eyebrow mb-2">Agenda</p>
+              <p className="section-eyebrow mb-3">Agenda</p>
               <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(1.5rem,2.5vw,2rem)', color: 'var(--ink)', lineHeight: 1.2 }}>
                 Próximas actividades
               </h2>
             </div>
           </div>
-          <div className="space-y-3">
+          <div className="space-y-4">
             {PROXIMOS.map((e, i) => (
-              <div key={i} className="card-base p-5 flex flex-col sm:flex-row sm:items-center gap-4" style={{ borderRadius: 'var(--radius-lg)' }}>
+              <div key={i} className="card-base p-7 flex flex-col sm:flex-row sm:items-center gap-5" style={{ borderRadius: 'var(--radius-lg)' }}>
                 <div className="flex items-center gap-3 shrink-0 min-w-[9rem]">
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'var(--terra-pale)' }}>
                     <Calendar className="w-5 h-5" style={{ color: 'var(--terra)' }} />
@@ -151,40 +151,40 @@ export default function ActividadesPage() {
       </section>
 
       {/* Categorías */}
-      <section style={{ padding: '5rem 0' }}>
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <p className="section-eyebrow mb-4 justify-center">Lo que ofrecemos</p>
+      <section className="py-24 lg:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="section-eyebrow mb-5 justify-center">Lo que ofrecemos</p>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem,3.5vw,3rem)', fontWeight: 700, color: 'var(--ink)', lineHeight: 1.1 }}>
               Algo para cada{' '}
               <em style={{ fontStyle: 'italic', color: 'var(--terra)' }}>tipo de erasmus.</em>
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-8">
             {CATEGORIAS.map((cat) => (
               <div key={cat.titulo} className="card-base overflow-hidden" style={{ borderRadius: 'var(--radius-lg)' }}>
-                <div className={`bg-gradient-to-br ${cat.color} p-7 relative`}>
+                <div className={`bg-gradient-to-br ${cat.color} px-8 py-10 relative`}>
                   <div className="absolute inset-0 opacity-20"
                     style={{ backgroundImage: 'radial-gradient(circle at 80% 20%, rgba(255,255,255,.15) 0%, transparent 50%)' }} />
                   <div className="relative">
-                    <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
+                    <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
                       style={{ background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.15)', color: '#fff' }}>
                       {cat.icon}
                     </div>
-                    <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.375rem', color: '#fff', lineHeight: 1.2, marginBottom: '.5rem' }}>
+                    <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.5rem', color: '#fff', lineHeight: 1.2, marginBottom: '.75rem' }}>
                       {cat.titulo}
                     </h3>
-                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '.9rem', color: 'rgba(255,255,255,.6)', lineHeight: 1.6 }}>
+                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '.9375rem', color: 'rgba(255,255,255,.6)', lineHeight: 1.75 }}>
                       {cat.descripcion}
                     </p>
                   </div>
                 </div>
-                <div className="p-6">
-                  <ul className="space-y-2 mb-5">
+                <div className="p-8">
+                  <ul className="space-y-3 mb-6">
                     {cat.items.map((item) => (
-                      <li key={item} className="flex items-center gap-2.5">
+                      <li key={item} className="flex items-center gap-3">
                         <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: 'var(--terra)' }} />
-                        <span style={{ fontFamily: 'var(--font-body)', fontSize: '.875rem', color: 'var(--text-secondary)' }}>{item}</span>
+                        <span style={{ fontFamily: 'var(--font-body)', fontSize: '.9375rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>{item}</span>
                       </li>
                     ))}
                   </ul>

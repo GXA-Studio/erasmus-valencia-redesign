@@ -44,35 +44,35 @@ const ITEMS = [
 
 export default function Servicios() {
   return (
-    <section style={{ background: 'var(--paper)', padding: '5rem 0' }}>
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-24 lg:py-28" style={{ background: 'var(--paper)' }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-14">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-10 mb-20">
           <div>
-            <p className="section-eyebrow mb-4">Nuestros servicios</p>
+            <p className="section-eyebrow mb-5">Nuestros servicios</p>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.25rem,4vw,3.5rem)', fontWeight: 700, color: 'var(--ink)', maxWidth: '26rem', lineHeight: 1.12 }}>
               Todo lo que<br />
               <em style={{ fontStyle: 'italic', color: 'var(--terra)' }}>necesitas</em>{' '}
               en Valencia.
             </h2>
           </div>
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'var(--text-secondary)', maxWidth: '24rem', lineHeight: 1.65 }}>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'var(--text-secondary)', maxWidth: '26rem', lineHeight: 1.75 }}>
             Desde que aterrizas hasta que te vas, acompañamos a más de 50.000 estudiantes
             internacionales cada año desde 2007.
           </p>
         </div>
 
         {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {ITEMS.map(({ Icon, label, href, desc, badge, badgeClass, accent }) => (
             <Link
               key={href} href={href}
-              className="card-base group p-6 flex flex-col cursor-pointer"
+              className="card-base group p-8 flex flex-col cursor-pointer"
               style={{ borderRadius: 'var(--radius-lg)' }}
             >
-              <div className="flex items-start justify-between mb-5">
-                <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
+              <div className="flex items-start justify-between mb-6">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
                   style={{ background: `${accent}18` }}>
                   <Icon className="w-5 h-5" style={{ color: accent }} />
                 </div>
@@ -81,18 +81,18 @@ export default function Servicios() {
 
               <h3 style={{
                 fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.125rem',
-                color: 'var(--ink)', marginBottom: '.5rem',
+                color: 'var(--ink)', marginBottom: '.625rem',
                 transition: 'color .2s',
               }}
                 className="group-hover:text-[var(--terra)] transition-colors"
               >
                 {label}
               </h3>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '.875rem', color: 'var(--text-secondary)', lineHeight: 1.65, flex: 1 }}>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '.9rem', color: 'var(--text-secondary)', lineHeight: 1.75, flex: 1 }}>
                 {desc}
               </p>
 
-              <div className="flex items-center gap-1.5 mt-5" style={{ color: 'var(--terra)', fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: '.8125rem' }}>
+              <div className="flex items-center gap-1.5 mt-6" style={{ color: 'var(--terra)', fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: '.8125rem' }}>
                 Ver más
                 <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
               </div>
@@ -101,22 +101,22 @@ export default function Servicios() {
 
           {/* CTA card */}
           <div
-            className="p-6 flex flex-col justify-between rounded-2xl"
+            className="p-8 flex flex-col justify-between rounded-2xl"
             style={{ background: 'var(--ink)', gridColumn: 'span 1' }}
           >
             <div>
-              <p className="section-eyebrow mb-4" style={{ color: 'rgba(255,255,255,.3)' }}>¿Dudas?</p>
-              <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.25rem', color: '#fff', lineHeight: 1.2, marginBottom: '.75rem' }}>
+              <p className="section-eyebrow mb-5" style={{ color: 'rgba(255,255,255,.3)' }}>¿Dudas?</p>
+              <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.25rem', color: '#fff', lineHeight: 1.3, marginBottom: '1rem' }}>
                 El equipo te responde hoy
               </p>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '.875rem', color: 'rgba(255,255,255,.5)', lineHeight: 1.6 }}>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '.9rem', color: 'rgba(255,255,255,.5)', lineHeight: 1.7 }}>
                 Lun–Vie 10:00–18:00
               </p>
             </div>
             <a
               href="https://wa.me/34634300402?text=Hola!"
               target="_blank" rel="noopener noreferrer"
-              className="btn btn-terra btn-sm mt-6"
+              className="btn btn-terra btn-sm mt-8"
               style={{ borderRadius: '10px' }}
             >
               Escribir por WhatsApp

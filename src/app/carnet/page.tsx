@@ -19,21 +19,21 @@ export default function CarnetPage() {
     <main style={{ background: 'var(--paper)', minHeight: '100vh', paddingTop: '5.5rem' }}>
 
       {/* Hero */}
-      <section style={{ background: 'var(--ink)', padding: '5rem 0 4rem', position: 'relative', overflow: 'hidden' }}>
+      <section className="py-20 lg:py-24" style={{ background: 'var(--ink)', position: 'relative', overflow: 'hidden' }}>
         <div className="absolute top-0 right-0 w-[600px] h-[600px] pointer-events-none"
           style={{ background: 'radial-gradient(circle, rgba(201,151,74,.12) 0%, transparent 65%)', transform: 'translate(20%, -20%)' }} />
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <p className="section-eyebrow mb-5" style={{ color: 'rgba(255,255,255,.35)' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <p className="section-eyebrow mb-6" style={{ color: 'rgba(255,255,255,.35)' }}>
             <span style={{ background: 'rgba(255,255,255,.2)', height: '2px', width: '2rem', display: 'inline-block', borderRadius: '1px' }} />
             Carnet Erasmus Life
           </p>
           <div className="max-w-2xl">
-            <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem,5vw,4rem)', fontWeight: 800, color: '#fff', lineHeight: 1.08, marginBottom: '1.25rem' }}>
+            <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem,5vw,4rem)', fontWeight: 800, color: '#fff', lineHeight: 1.08, marginBottom: '1.5rem' }}>
               Tres niveles.
               <br />
               <em style={{ fontStyle: 'italic', color: 'var(--gold)' }}>Cientos de descuentos.</em>
             </h1>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'rgba(255,255,255,.5)', lineHeight: 1.7 }}>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'rgba(255,255,255,.5)', lineHeight: 1.8 }}>
               El carnet oficial de Erasmus Life Valencia. Descuentos reales en cultura, ocio, comercios y viajes por toda España.
             </p>
           </div>
@@ -41,9 +41,9 @@ export default function CarnetPage() {
       </section>
 
       {/* Pricing cards */}
-      <section style={{ padding: '5rem 0', background: 'var(--paper)' }}>
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-6">
+      <section className="py-24 lg:py-28" style={{ background: 'var(--paper)' }}>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {CARNETS.map((c) => (
               <div
                 key={c.nombre}
@@ -63,11 +63,11 @@ export default function CarnetPage() {
                     </span>
                   </div>
                 )}
-                <div className="p-7 flex flex-col flex-1">
+                <div className="p-9 flex flex-col flex-1">
                   <p style={{
                     fontFamily: 'var(--font-body)', fontSize: '.6875rem', fontWeight: 700,
                     letterSpacing: '.12em', textTransform: 'uppercase',
-                    color: c.highlight ? 'var(--terra)' : 'var(--text-muted)', marginBottom: '.75rem',
+                    color: c.highlight ? 'var(--terra)' : 'var(--text-muted)', marginBottom: '1rem',
                   }}>
                     {c.nombre}
                   </p>
@@ -81,21 +81,21 @@ export default function CarnetPage() {
                     </span>
                   </div>
                   {c.periodo && (
-                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '.8125rem', color: c.highlight ? 'rgba(255,255,255,.4)' : 'var(--text-muted)', marginBottom: '1rem' }}>
+                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '.875rem', color: c.highlight ? 'rgba(255,255,255,.4)' : 'var(--text-muted)', marginBottom: '1.25rem' }}>
                       {c.periodo}
                     </p>
                   )}
-                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '.875rem', color: c.highlight ? 'rgba(255,255,255,.55)' : 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '.9375rem', color: c.highlight ? 'rgba(255,255,255,.55)' : 'var(--text-secondary)', lineHeight: 1.75, marginBottom: '1.75rem' }}>
                     {c.descripcion}
                   </p>
-                  <ul className="space-y-2.5 flex-1 mb-7">
+                  <ul className="space-y-3.5 flex-1 mb-8">
                     {c.beneficios.map((b) => (
                       <li key={b} className="flex items-start gap-3">
                         <div className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5"
                           style={{ background: c.highlight ? 'rgba(217,94,42,.2)' : 'var(--terra-pale)' }}>
                           <Check className="w-3 h-3" style={{ color: 'var(--terra)' }} />
                         </div>
-                        <span style={{ fontFamily: 'var(--font-body)', fontSize: '.875rem', lineHeight: 1.5, color: c.highlight ? 'rgba(255,255,255,.7)' : 'var(--text-secondary)' }}>
+                        <span style={{ fontFamily: 'var(--font-body)', fontSize: '.9rem', lineHeight: 1.65, color: c.highlight ? 'rgba(255,255,255,.7)' : 'var(--text-secondary)' }}>
                           {b}
                         </span>
                       </li>
@@ -116,27 +116,27 @@ export default function CarnetPage() {
       </section>
 
       {/* Descuentos grid */}
-      <section style={{ background: 'var(--paper-2)', padding: '5rem 0' }}>
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <p className="section-eyebrow mb-4 justify-center">Descuentos incluidos</p>
+      <section className="py-24 lg:py-28" style={{ background: 'var(--paper-2)' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="section-eyebrow mb-5 justify-center">Descuentos incluidos</p>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem,3.5vw,3rem)', fontWeight: 700, color: 'var(--ink)', lineHeight: 1.1 }}>
               200+ establecimientos
               <br />
               <em style={{ fontStyle: 'italic', color: 'var(--terra)' }}>en Valencia y España.</em>
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-7">
             {DESCUENTOS.map((cat) => (
-              <div key={cat.categoria} className="card-base p-6" style={{ borderRadius: 'var(--radius-lg)' }}>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '.6875rem', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--terra)', marginBottom: '1rem' }}>
+              <div key={cat.categoria} className="card-base p-8" style={{ borderRadius: 'var(--radius-lg)' }}>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '.6875rem', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--terra)', marginBottom: '1.25rem' }}>
                   {cat.categoria}
                 </p>
-                <ul className="space-y-2">
+                <ul className="space-y-2.5">
                   {cat.items.map((item) => (
-                    <li key={item} className="flex items-center gap-2">
+                    <li key={item} className="flex items-center gap-2.5">
                       <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: 'var(--terra)' }} />
-                      <span style={{ fontFamily: 'var(--font-body)', fontSize: '.875rem', color: 'var(--text-secondary)' }}>{item}</span>
+                      <span style={{ fontFamily: 'var(--font-body)', fontSize: '.9375rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -147,25 +147,25 @@ export default function CarnetPage() {
       </section>
 
       {/* How to get it */}
-      <section style={{ background: 'var(--paper)', padding: '5rem 0' }}>
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <p className="section-eyebrow mb-4 justify-center">Cómo conseguirlo</p>
-          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.75rem,3vw,2.5rem)', fontWeight: 700, color: 'var(--ink)', lineHeight: 1.15, marginBottom: '2.5rem' }}>
+      <section className="py-24 lg:py-28" style={{ background: 'var(--paper)' }}>
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="section-eyebrow mb-5 justify-center">Cómo conseguirlo</p>
+          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.75rem,3vw,2.5rem)', fontWeight: 700, color: 'var(--ink)', lineHeight: 1.15, marginBottom: '3rem' }}>
             Pásate por la{' '}
             <em style={{ fontStyle: 'italic', color: 'var(--terra)' }}>oficina púrpura</em>
           </h2>
-          <div className="grid sm:grid-cols-3 gap-6 mb-10">
+          <div className="grid sm:grid-cols-3 gap-8 mb-12">
             {[
               { icon: <MapPin className="w-5 h-5" style={{ color: 'var(--terra)' }} />, title: 'Ubicación', text: 'Calle Ramón Llull 21 bajo, Valencia (46021)' },
               { icon: <Clock className="w-5 h-5" style={{ color: 'var(--terra)' }} />, title: 'Horario', text: 'Lunes a viernes · 10:00 – 18:00' },
               { icon: <Check className="w-5 h-5" style={{ color: 'var(--terra)' }} />, title: 'Requisito', text: 'Trae tu carnet de estudiante o pasaporte' },
             ].map((s) => (
-              <div key={s.title} className="card-base p-5" style={{ borderRadius: 'var(--radius-lg)' }}>
-                <div className="w-9 h-9 rounded-xl flex items-center justify-center mb-3" style={{ background: 'var(--terra-pale)' }}>
+              <div key={s.title} className="card-base p-8" style={{ borderRadius: 'var(--radius-lg)' }}>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ background: 'var(--terra-pale)' }}>
                   {s.icon}
                 </div>
-                <p style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '.9375rem', color: 'var(--ink)', marginBottom: '.4rem' }}>{s.title}</p>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '.875rem', color: 'var(--text-secondary)', lineHeight: 1.55 }}>{s.text}</p>
+                <p style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '1rem', color: 'var(--ink)', marginBottom: '.5rem' }}>{s.title}</p>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '.9375rem', color: 'var(--text-secondary)', lineHeight: 1.65 }}>{s.text}</p>
               </div>
             ))}
           </div>

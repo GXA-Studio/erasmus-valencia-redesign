@@ -12,26 +12,26 @@ export default function PisosPage() {
     <main style={{ background: 'var(--paper)', minHeight: '100vh', paddingTop: '5.5rem' }}>
 
       {/* Hero banner */}
-      <section style={{ background: 'var(--ink)', padding: '5rem 0 4rem' }}>
-        <div className="max-w-7xl mx-auto px-6">
-          <p className="section-eyebrow mb-5" style={{ color: 'rgba(255,255,255,.35)' }}>
+      <section className="py-20 lg:py-24" style={{ background: 'var(--ink)' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="section-eyebrow mb-6" style={{ color: 'rgba(255,255,255,.35)' }}>
             <span style={{ background: 'rgba(255,255,255,.2)', height: '2px', width: '2rem', display: 'inline-block', borderRadius: '1px' }} />
             Alojamiento verificado
           </p>
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10">
             <div>
-              <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem,5vw,4rem)', fontWeight: 800, color: '#fff', lineHeight: 1.08, marginBottom: '1.25rem' }}>
+              <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem,5vw,4rem)', fontWeight: 800, color: '#fff', lineHeight: 1.08, marginBottom: '1.5rem' }}>
                 Pisos reales,
                 <br />
                 <em style={{ fontStyle: 'italic', color: 'var(--terra)' }}>sin comisiones.</em>
               </h1>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'rgba(255,255,255,.5)', maxWidth: '36rem', lineHeight: 1.7 }}>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'rgba(255,255,255,.5)', maxWidth: '38rem', lineHeight: 1.8 }}>
                 7 propiedades en Blasco Ibáñez y zona universitaria. Disponibilidad por semestres. Sin intermediarios, sin sorpresas.
               </p>
             </div>
-            <div className="flex flex-col items-start lg:items-end gap-3 shrink-0">
-              <div className="flex items-center gap-2 px-4 py-2 rounded-xl" style={{ background: 'rgba(217,94,42,.15)', border: '1px solid rgba(217,94,42,.25)' }}>
-                <span style={{ fontFamily: 'var(--font-body)', fontSize: '.875rem', color: 'rgba(255,255,255,.7)' }}>
+            <div className="flex flex-col items-start lg:items-end gap-4 shrink-0">
+              <div className="flex items-center gap-2 px-5 py-2.5 rounded-xl" style={{ background: 'rgba(217,94,42,.15)', border: '1px solid rgba(217,94,42,.25)' }}>
+                <span style={{ fontFamily: 'var(--font-body)', fontSize: '.9375rem', color: 'rgba(255,255,255,.7)' }}>
                   <strong style={{ color: '#fff' }}>7</strong> propiedades verificadas
                 </span>
               </div>
@@ -47,8 +47,8 @@ export default function PisosPage() {
       </section>
 
       {/* Filter bar */}
-      <div style={{ background: 'var(--paper-2)', borderBottom: '1px solid var(--border)', padding: '.875rem 0' }}>
-        <div className="max-w-7xl mx-auto px-6 flex flex-wrap items-center gap-3">
+      <div style={{ background: 'var(--paper-2)', borderBottom: '1px solid var(--border)', padding: '1rem 0' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center gap-3">
           <span style={{ fontFamily: 'var(--font-body)', fontSize: '.8125rem', fontWeight: 600, color: 'var(--text-muted)' }}>Zona:</span>
           {['Todas', 'Blasco Ibáñez', 'Zona Universitaria'].map((z) => (
             <button key={z} className="px-4 py-1.5 rounded-full text-sm transition-colors"
@@ -71,9 +71,9 @@ export default function PisosPage() {
       </div>
 
       {/* Property grid */}
-      <section style={{ padding: '4rem 0' }}>
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+      <section className="py-20 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
             {PISOS.map((p) => {
               const libre = p.disponibilidad.some((d) => d.libre > 0);
               return (
@@ -112,36 +112,36 @@ export default function PisosPage() {
                   </div>
 
                   {/* Content */}
-                  <div className="p-6">
-                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '.6875rem', fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', color: 'var(--terra)', marginBottom: '.4rem' }}>
+                  <div className="p-8">
+                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '.6875rem', fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', color: 'var(--terra)', marginBottom: '.5rem' }}>
                       {p.ref}
                     </p>
-                    <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.125rem', color: 'var(--ink)', marginBottom: '.5rem', lineHeight: 1.25 }}>
+                    <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.125rem', color: 'var(--ink)', marginBottom: '.75rem', lineHeight: 1.3 }}>
                       {p.titulo}
                     </h2>
-                    <div className="flex items-center gap-1.5 mb-3">
+                    <div className="flex items-center gap-1.5 mb-4">
                       <MapPin className="w-3.5 h-3.5 shrink-0" style={{ color: 'var(--text-muted)' }} />
-                      <span style={{ fontFamily: 'var(--font-body)', fontSize: '.8125rem', color: 'var(--text-secondary)' }}>{p.zona}</span>
+                      <span style={{ fontFamily: 'var(--font-body)', fontSize: '.875rem', color: 'var(--text-secondary)' }}>{p.zona}</span>
                     </div>
-                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '.875rem', color: 'var(--text-secondary)', lineHeight: 1.65, marginBottom: '1rem' }}>
+                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '.9375rem', color: 'var(--text-secondary)', lineHeight: 1.75, marginBottom: '1.25rem' }}>
                       {p.descripcion}
                     </p>
-                    <div className="flex flex-wrap gap-1.5 mb-5">
+                    <div className="flex flex-wrap gap-2 mb-6">
                       {p.detalles.map((d) => (
                         <span key={d} style={{
                           fontFamily: 'var(--font-body)', fontSize: '.6875rem', fontWeight: 600, letterSpacing: '.04em',
                           background: 'var(--paper-2)', border: '1px solid var(--border)', color: 'var(--text-secondary)',
-                          padding: '.2rem .6rem', borderRadius: '99px',
+                          padding: '.25rem .7rem', borderRadius: '99px',
                         }}>
                           {d}
                         </span>
                       ))}
                     </div>
-                    <div style={{ paddingTop: '1rem', borderTop: '1px solid var(--border)', marginBottom: '1.25rem' }}>
+                    <div style={{ paddingTop: '1.125rem', borderTop: '1px solid var(--border)', marginBottom: '1.5rem' }}>
                       {p.disponibilidad.map((d, i) => (
-                        <div key={i} className="flex justify-between items-center mb-1">
-                          <span style={{ fontFamily: 'var(--font-body)', fontSize: '.75rem', color: 'var(--text-muted)' }}>{d.periodo}</span>
-                          <span style={{ fontFamily: 'var(--font-body)', fontSize: '.75rem', fontWeight: 600, color: d.libre > 0 ? '#16A34A' : 'var(--text-muted)' }}>
+                        <div key={i} className="flex justify-between items-center mb-1.5">
+                          <span style={{ fontFamily: 'var(--font-body)', fontSize: '.8125rem', color: 'var(--text-muted)' }}>{d.periodo}</span>
+                          <span style={{ fontFamily: 'var(--font-body)', fontSize: '.8125rem', fontWeight: 600, color: d.libre > 0 ? '#16A34A' : 'var(--text-muted)' }}>
                             {d.libre > 0 ? `${d.libre} libre${d.libre > 1 ? 's' : ''}` : 'Consultar'}
                           </span>
                         </div>
@@ -163,12 +163,12 @@ export default function PisosPage() {
       </section>
 
       {/* CTA bottom */}
-      <section style={{ background: 'var(--ink)', padding: '5rem 0' }}>
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.75rem,3vw,2.5rem)', fontWeight: 700, color: '#fff', lineHeight: 1.15, marginBottom: '1rem' }}>
+      <section className="py-24 lg:py-28" style={{ background: 'var(--ink)' }}>
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.75rem,3vw,2.5rem)', fontWeight: 700, color: '#fff', lineHeight: 1.15, marginBottom: '1.25rem' }}>
             ¿No encuentras lo que buscas?
           </h2>
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'rgba(255,255,255,.5)', lineHeight: 1.7, marginBottom: '2rem' }}>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'rgba(255,255,255,.5)', lineHeight: 1.8, marginBottom: '2.5rem' }}>
             Cuéntanos qué necesitas — zona, número de habitaciones, semestre — y te encontramos el piso perfecto entre nuestros socios.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">

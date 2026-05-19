@@ -6,13 +6,13 @@ export default function Footer() {
   return (
     <footer style={{ background: 'var(--ink)', color: 'rgba(255,255,255,.6)' }}>
       {/* CTA strip */}
-      <div style={{ background: 'var(--terra)', padding: '3rem 1.5rem' }}>
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="py-14" style={{ background: 'var(--terra)' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
-            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.75rem', fontWeight: 700, color: '#fff', marginBottom: '.25rem' }}>
+            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.875rem', fontWeight: 700, color: '#fff', marginBottom: '.5rem' }}>
               ¿Buscas piso en Valencia?
             </h3>
-            <p style={{ fontFamily: 'var(--font-body)', color: 'rgba(255,255,255,.75)', fontSize: '.9375rem' }}>
+            <p style={{ fontFamily: 'var(--font-body)', color: 'rgba(255,255,255,.75)', fontSize: '1rem', lineHeight: 1.65 }}>
               Sin comisiones de agencia. Respuesta en menos de 2 horas.
             </p>
           </div>
@@ -29,7 +29,7 @@ export default function Footer() {
       </div>
 
       {/* Main */}
-      <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Brand */}
         <div>
           <div className="flex items-center gap-3 mb-5">
@@ -41,7 +41,7 @@ export default function Footer() {
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '.625rem', letterSpacing: '.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,.35)' }}>Valencia · desde 2007</p>
             </div>
           </div>
-          <p style={{ fontSize: '.875rem', lineHeight: 1.7, fontFamily: 'var(--font-body)' }}>
+          <p style={{ fontSize: '.9375rem', lineHeight: 1.8, fontFamily: 'var(--font-body)' }}>
             La comunidad de estudiantes internacionales más grande de Valencia.
             Con sedes en 7 ciudades españolas.
           </p>
@@ -109,7 +109,7 @@ export default function Footer() {
 
       {/* Bottom */}
       <div style={{ borderTop: '1px solid rgba(255,255,255,.07)' }}>
-        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p style={{ fontSize: '.75rem', fontFamily: 'var(--font-body)' }}>© {new Date().getFullYear()} Erasmus Life Valencia. Todos los derechos reservados.</p>
           <div className="flex gap-5">
             {[['Privacidad', '/privacidad'], ['Cookies', '/cookies'], ['Términos', '/terminos']].map(([l, h]) => (
