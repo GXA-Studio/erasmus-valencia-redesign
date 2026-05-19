@@ -51,7 +51,6 @@ body {
   background: var(--paper);
   color: var(--text-primary);
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
 h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.12; letter-spacing: -.025em; }
@@ -66,9 +65,9 @@ h5, h6, label, .label { font-family: var(--font-body); }
 
 /* Animated gradient mesh — hero bg */
 @keyframes meshShift {
-  0%,100% { transform: scale(1) translate(0,0); }
-  33%      { transform: scale(1.06) translate(2%,-2%); }
-  66%      { transform: scale(.97) translate(-2%,2%); }
+  0%,100% { transform: scale(1.2) translate(0,0); }
+  33%      { transform: scale(1.28) translate(1.5%,-1.5%); }
+  66%      { transform: scale(1.15) translate(-1.5%,1.5%); }
 }
 
 .mesh-bg {
@@ -79,7 +78,7 @@ h5, h6, label, .label { font-family: var(--font-body); }
 .mesh-bg::before {
   content: '';
   position: absolute;
-  inset: -40%;
+  inset: 0;
   background:
     radial-gradient(ellipse 60% 50% at 70% 30%, rgba(217,94,42,.32) 0%, transparent 60%),
     radial-gradient(ellipse 50% 60% at 20% 70%, rgba(26,86,209,.22) 0%, transparent 55%),
