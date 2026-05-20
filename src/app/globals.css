@@ -17,6 +17,8 @@
   --azure-dark: #1340A8;
   --azure-pale: #EEF4FF;
   --gold: #C9974A;        /* Spanish gold */
+  --whatsapp: #25D366;    /* WhatsApp brand — reserved for FAB only */
+  --whatsapp-glow: rgba(37,211,102,.4);
 
   /* Text */
   --text-primary: #0C0C10;
@@ -41,8 +43,6 @@
   --radius-lg: 20px;
   --radius-xl: 28px;
 }
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
