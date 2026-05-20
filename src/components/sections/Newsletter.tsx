@@ -18,10 +18,10 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="py-24 lg:py-28" style={{ background: 'var(--paper)' }}>
+    <section className="py-24 lg:py-32" style={{ background: 'var(--paper)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          className="rounded-3xl px-10 py-16 md:px-20 relative overflow-hidden"
+          className="rounded-3xl px-10 py-20 md:px-20 relative overflow-hidden"
           style={{ background: 'var(--ink)' }}
         >
           {/* Decorative blob */}
@@ -41,7 +41,7 @@ export default function Newsletter() {
                 <br />
                 <em style={{ fontStyle: 'italic', color: 'var(--terra)' }}>nada de Valencia.</em>
               </h2>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'rgba(255,255,255,.5)', lineHeight: 1.8 }}>
+              <p className="leading-loose max-w-prose" style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'rgba(255,255,255,.45)' }}>
                 Eventos, pisos disponibles, viajes y descuentos cada semana.
                 Sin spam, solo lo que importa para tu Erasmus.
               </p>
@@ -54,7 +54,7 @@ export default function Newsletter() {
                     <Check className="w-8 h-8 text-white" />
                   </div>
                   <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.375rem', color: '#fff' }}>¡Suscrito!</p>
-                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '.9375rem', color: 'rgba(255,255,255,.5)' }}>Recibirás el próximo newsletter el lunes.</p>
+                  <p className="leading-relaxed max-w-prose" style={{ fontFamily: 'var(--font-body)', fontSize: '.9375rem', color: 'rgba(255,255,255,.45)' }}>Recibirás el próximo newsletter el lunes.</p>
                 </div>
               ) : (
                 <form onSubmit={submit} className="space-y-3">

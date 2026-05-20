@@ -6,10 +6,10 @@ const TRIP_COLORS = ['from-amber-800 to-amber-950', 'from-blue-800 to-blue-950',
 
 export default function Viajes() {
   return (
-    <section className="py-24 lg:py-28" style={{ background: 'var(--paper-2)' }}>
+    <section className="py-24 lg:py-32" style={{ background: 'var(--paper-2)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-10 mb-20">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-20 lg:mb-24">
           <div>
             <p className="section-eyebrow mb-5">Precios reales</p>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.25rem,4vw,3.5rem)', fontWeight: 700, color: 'var(--ink)', lineHeight: 1.1 }}>
@@ -18,8 +18,8 @@ export default function Viajes() {
               <em style={{ fontStyle: 'italic', color: 'var(--terra)' }}>seguro incluido.</em>
             </h2>
           </div>
-          <div>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'var(--text-secondary)', maxWidth: '24rem', marginBottom: '1.25rem', lineHeight: 1.75 }}>
+          <div className="max-w-prose">
+            <p className="mb-6 leading-relaxed" style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'var(--text-muted)' }}>
               Todos los viajes incluyen seguro de viaje. Precios de grupo disponibles solo en nuestra oficina.
             </p>
             <Link href="/viajes" className="btn btn-outline btn-sm">
@@ -29,7 +29,7 @@ export default function Viajes() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
           {VIAJES.map((v, i) => (
             <div key={v.nombre} className="card-base overflow-hidden" style={{ borderRadius: 'var(--radius-lg)' }}>
               {/* Header gradient */}
@@ -70,7 +70,7 @@ export default function Viajes() {
                   ))}
                 </div>
 
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '.875rem', color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: '1.5rem', paddingTop: '1.25rem', borderTop: '1px solid var(--border)' }}>
+                <p className="leading-relaxed mb-6" style={{ fontFamily: 'var(--font-body)', fontSize: '.875rem', color: 'var(--text-muted)', paddingTop: '1.25rem', borderTop: '1px solid var(--border)' }}>
                   {v.info}
                 </p>
 
@@ -89,7 +89,7 @@ export default function Viajes() {
         </div>
 
         {/* GOLD card badge */}
-        <div className="mt-14 flex flex-col sm:flex-row items-center gap-5 px-8 py-7 rounded-2xl"
+        <div className="mt-16 lg:mt-20 flex flex-col sm:flex-row items-center gap-6 px-8 py-8 rounded-2xl"
           style={{ background: 'linear-gradient(135deg, rgba(201,151,74,.12), rgba(217,94,42,.08))', border: '1px solid rgba(201,151,74,.25)' }}>
           <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'var(--gold)' }}>
             <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, color: '#fff', fontSize: '.875rem' }}>G</span>
@@ -98,7 +98,7 @@ export default function Viajes() {
             <p style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '.9375rem', color: 'var(--ink)' }}>
               Con el Carnet GOLD, ahorras 10€ en cada viaje largo
             </p>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '.8125rem', color: 'var(--text-secondary)', marginTop: '.15rem' }}>
+            <p className="mt-1 leading-relaxed max-w-prose" style={{ fontFamily: 'var(--font-body)', fontSize: '.8125rem', color: 'var(--text-muted)' }}>
               2€–5€ de descuento en excursiones de 1 día. Cancelación con reembolso hasta 24h antes.
             </p>
           </div>

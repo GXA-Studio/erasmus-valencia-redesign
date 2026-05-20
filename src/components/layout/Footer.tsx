@@ -12,7 +12,7 @@ export default function Footer() {
             <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.875rem', fontWeight: 700, color: '#fff', marginBottom: '.5rem' }}>
               ¿Buscas piso en Valencia?
             </h3>
-            <p style={{ fontFamily: 'var(--font-body)', color: 'rgba(255,255,255,.75)', fontSize: '1rem', lineHeight: 1.65 }}>
+            <p className="leading-relaxed max-w-prose" style={{ fontFamily: 'var(--font-body)', color: 'rgba(255,255,255,.75)', fontSize: '1rem' }}>
               Sin comisiones de agencia. Respuesta en menos de 2 horas.
             </p>
           </div>
@@ -29,7 +29,7 @@ export default function Footer() {
       </div>
 
       {/* Main */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
         {/* Brand */}
         <div>
           <div className="flex items-center gap-3 mb-5">
@@ -41,7 +41,7 @@ export default function Footer() {
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '.625rem', letterSpacing: '.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,.35)' }}>Valencia · desde 2007</p>
             </div>
           </div>
-          <p style={{ fontSize: '.9375rem', lineHeight: 1.8, fontFamily: 'var(--font-body)' }}>
+          <p className="leading-loose max-w-prose" style={{ fontSize: '.9375rem', fontFamily: 'var(--font-body)', color: 'rgba(255,255,255,.5)' }}>
             La comunidad de estudiantes internacionales más grande de Valencia.
             Con sedes en 7 ciudades españolas.
           </p>
@@ -51,7 +51,7 @@ export default function Footer() {
         {/* Links */}
         <div>
           <h4 style={{ fontFamily: 'var(--font-body)', fontSize: '.6875rem', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,.35)', marginBottom: '1.25rem' }}>Servicios</h4>
-          <ul className="space-y-2.5">
+          <ul className="space-y-3">
             {[
               ['Pisos y Habitaciones', '/pisos'],
               ['Actividades', '/actividades'],
@@ -70,7 +70,7 @@ export default function Footer() {
 
         <div>
           <h4 style={{ fontFamily: 'var(--font-body)', fontSize: '.6875rem', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,.35)', marginBottom: '1.25rem' }}>Descubre Valencia</h4>
-          <ul className="space-y-2.5">
+          <ul className="space-y-3">
             {[
               ['Historia', '/valencia/historia'],
               ['Universidades', '/valencia/universidades'],
@@ -89,7 +89,7 @@ export default function Footer() {
         {/* Contact */}
         <div>
           <h4 style={{ fontFamily: 'var(--font-body)', fontSize: '.6875rem', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,.35)', marginBottom: '1.25rem' }}>Contacto</h4>
-          <ul className="space-y-4">
+          <ul className="space-y-5">
             {[
               { Icon: MapPin, text: BRAND.address },
               { Icon: Phone, text: BRAND.phone },

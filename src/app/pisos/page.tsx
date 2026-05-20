@@ -9,23 +9,23 @@ export const metadata = {
 
 export default function PisosPage() {
   return (
-    <main style={{ background: 'var(--paper)', minHeight: '100vh', paddingTop: '5.5rem' }}>
+    <div className="w-full" style={{ background: 'var(--paper)', minHeight: '100vh', paddingTop: '5.5rem' }}>
 
       {/* Hero banner */}
-      <section className="py-20 lg:py-24" style={{ background: 'var(--ink)' }}>
+      <section className="py-24 lg:py-32" style={{ background: 'var(--ink)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="section-eyebrow mb-6" style={{ color: 'rgba(255,255,255,.35)' }}>
             <span style={{ background: 'rgba(255,255,255,.2)', height: '2px', width: '2rem', display: 'inline-block', borderRadius: '1px' }} />
             Alojamiento verificado
           </p>
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12">
             <div>
               <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem,5vw,4rem)', fontWeight: 800, color: '#fff', lineHeight: 1.08, marginBottom: '1.5rem' }}>
                 Pisos reales,
                 <br />
                 <em style={{ fontStyle: 'italic', color: 'var(--terra)' }}>sin comisiones.</em>
               </h1>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'rgba(255,255,255,.5)', maxWidth: '38rem', lineHeight: 1.8 }}>
+              <p className="leading-loose max-w-prose" style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'rgba(255,255,255,.45)' }}>
                 7 propiedades en Blasco Ibáñez y zona universitaria. Disponibilidad por semestres. Sin intermediarios, sin sorpresas.
               </p>
             </div>
@@ -71,9 +71,9 @@ export default function PisosPage() {
       </div>
 
       {/* Property grid */}
-      <section className="py-20 lg:py-24">
+      <section className="py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10">
             {PISOS.map((p) => {
               const libre = p.disponibilidad.some((d) => d.libre > 0);
               return (
@@ -123,7 +123,7 @@ export default function PisosPage() {
                       <MapPin className="w-3.5 h-3.5 shrink-0" style={{ color: 'var(--text-muted)' }} />
                       <span style={{ fontFamily: 'var(--font-body)', fontSize: '.875rem', color: 'var(--text-secondary)' }}>{p.zona}</span>
                     </div>
-                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '.9375rem', color: 'var(--text-secondary)', lineHeight: 1.75, marginBottom: '1.25rem' }}>
+                    <p className="leading-relaxed mb-5" style={{ fontFamily: 'var(--font-body)', fontSize: '.9375rem', color: 'var(--text-muted)' }}>
                       {p.descripcion}
                     </p>
                     <div className="flex flex-wrap gap-2 mb-6">
@@ -163,12 +163,12 @@ export default function PisosPage() {
       </section>
 
       {/* CTA bottom */}
-      <section className="py-24 lg:py-28" style={{ background: 'var(--ink)' }}>
+      <section className="py-24 lg:py-32" style={{ background: 'var(--ink)' }}>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.75rem,3vw,2.5rem)', fontWeight: 700, color: '#fff', lineHeight: 1.15, marginBottom: '1.25rem' }}>
             ¿No encuentras lo que buscas?
           </h2>
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'rgba(255,255,255,.5)', lineHeight: 1.8, marginBottom: '2.5rem' }}>
+          <p className="leading-loose max-w-prose mx-auto mb-10" style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'rgba(255,255,255,.45)' }}>
             Cuéntanos qué necesitas — zona, número de habitaciones, semestre — y te encontramos el piso perfecto entre nuestros socios.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -184,6 +184,6 @@ export default function PisosPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

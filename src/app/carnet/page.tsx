@@ -16,10 +16,10 @@ const DESCUENTOS = [
 
 export default function CarnetPage() {
   return (
-    <main style={{ background: 'var(--paper)', minHeight: '100vh', paddingTop: '5.5rem' }}>
+    <div className="w-full" style={{ background: 'var(--paper)', minHeight: '100vh', paddingTop: '5.5rem' }}>
 
       {/* Hero */}
-      <section className="py-20 lg:py-24" style={{ background: 'var(--ink)', position: 'relative', overflow: 'hidden' }}>
+      <section className="py-24 lg:py-32" style={{ background: 'var(--ink)', position: 'relative', overflow: 'hidden' }}>
         <div className="absolute top-0 right-0 w-[600px] h-[600px] pointer-events-none"
           style={{ background: 'radial-gradient(circle, rgba(201,151,74,.12) 0%, transparent 65%)', transform: 'translate(20%, -20%)' }} />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -33,7 +33,7 @@ export default function CarnetPage() {
               <br />
               <em style={{ fontStyle: 'italic', color: 'var(--gold)' }}>Cientos de descuentos.</em>
             </h1>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'rgba(255,255,255,.5)', lineHeight: 1.8 }}>
+            <p className="leading-loose max-w-prose" style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'rgba(255,255,255,.45)' }}>
               El carnet oficial de Erasmus Life Valencia. Descuentos reales en cultura, ocio, comercios y viajes por toda España.
             </p>
           </div>
@@ -41,9 +41,9 @@ export default function CarnetPage() {
       </section>
 
       {/* Pricing cards */}
-      <section className="py-24 lg:py-28" style={{ background: 'var(--paper)' }}>
+      <section className="py-24 lg:py-32" style={{ background: 'var(--paper)' }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
             {CARNETS.map((c) => (
               <div
                 key={c.nombre}
@@ -85,17 +85,17 @@ export default function CarnetPage() {
                       {c.periodo}
                     </p>
                   )}
-                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '.9375rem', color: c.highlight ? 'rgba(255,255,255,.55)' : 'var(--text-secondary)', lineHeight: 1.75, marginBottom: '1.75rem' }}>
+                  <p className="leading-relaxed mb-7" style={{ fontFamily: 'var(--font-body)', fontSize: '.9375rem', color: c.highlight ? 'rgba(255,255,255,.45)' : 'var(--text-muted)' }}>
                     {c.descripcion}
                   </p>
-                  <ul className="space-y-3.5 flex-1 mb-8">
+                  <ul className="space-y-4 flex-1 mb-8">
                     {c.beneficios.map((b) => (
                       <li key={b} className="flex items-start gap-3">
                         <div className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5"
                           style={{ background: c.highlight ? 'rgba(217,94,42,.2)' : 'var(--terra-pale)' }}>
                           <Check className="w-3 h-3" style={{ color: 'var(--terra)' }} />
                         </div>
-                        <span style={{ fontFamily: 'var(--font-body)', fontSize: '.9rem', lineHeight: 1.65, color: c.highlight ? 'rgba(255,255,255,.7)' : 'var(--text-secondary)' }}>
+                        <span className="leading-relaxed" style={{ fontFamily: 'var(--font-body)', fontSize: '.9rem', color: c.highlight ? 'rgba(255,255,255,.65)' : 'var(--text-muted)' }}>
                           {b}
                         </span>
                       </li>
@@ -116,9 +116,9 @@ export default function CarnetPage() {
       </section>
 
       {/* Descuentos grid */}
-      <section className="py-24 lg:py-28" style={{ background: 'var(--paper-2)' }}>
+      <section className="py-24 lg:py-32" style={{ background: 'var(--paper-2)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-20 lg:mb-24">
             <p className="section-eyebrow mb-5 justify-center">Descuentos incluidos</p>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem,3.5vw,3rem)', fontWeight: 700, color: 'var(--ink)', lineHeight: 1.1 }}>
               200+ establecimientos
@@ -126,17 +126,17 @@ export default function CarnetPage() {
               <em style={{ fontStyle: 'italic', color: 'var(--terra)' }}>en Valencia y España.</em>
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-7">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
             {DESCUENTOS.map((cat) => (
               <div key={cat.categoria} className="card-base p-8" style={{ borderRadius: 'var(--radius-lg)' }}>
                 <p style={{ fontFamily: 'var(--font-body)', fontSize: '.6875rem', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--terra)', marginBottom: '1.25rem' }}>
                   {cat.categoria}
                 </p>
-                <ul className="space-y-2.5">
+                <ul className="space-y-3">
                   {cat.items.map((item) => (
-                    <li key={item} className="flex items-center gap-2.5">
+                    <li key={item} className="flex items-center gap-3">
                       <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: 'var(--terra)' }} />
-                      <span style={{ fontFamily: 'var(--font-body)', fontSize: '.9375rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>{item}</span>
+                      <span className="leading-relaxed" style={{ fontFamily: 'var(--font-body)', fontSize: '.9375rem', color: 'var(--text-muted)' }}>{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -147,14 +147,14 @@ export default function CarnetPage() {
       </section>
 
       {/* How to get it */}
-      <section className="py-24 lg:py-28" style={{ background: 'var(--paper)' }}>
+      <section className="py-24 lg:py-32" style={{ background: 'var(--paper)' }}>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="section-eyebrow mb-5 justify-center">Cómo conseguirlo</p>
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.75rem,3vw,2.5rem)', fontWeight: 700, color: 'var(--ink)', lineHeight: 1.15, marginBottom: '3rem' }}>
             Pásate por la{' '}
             <em style={{ fontStyle: 'italic', color: 'var(--terra)' }}>oficina púrpura</em>
           </h2>
-          <div className="grid sm:grid-cols-3 gap-8 mb-12">
+          <div className="grid sm:grid-cols-3 gap-8 lg:gap-10 mb-16">
             {[
               { icon: <MapPin className="w-5 h-5" style={{ color: 'var(--terra)' }} />, title: 'Ubicación', text: 'Calle Ramón Llull 21 bajo, Valencia (46021)' },
               { icon: <Clock className="w-5 h-5" style={{ color: 'var(--terra)' }} />, title: 'Horario', text: 'Lunes a viernes · 10:00 – 18:00' },
@@ -165,7 +165,7 @@ export default function CarnetPage() {
                   {s.icon}
                 </div>
                 <p style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '1rem', color: 'var(--ink)', marginBottom: '.5rem' }}>{s.title}</p>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '.9375rem', color: 'var(--text-secondary)', lineHeight: 1.65 }}>{s.text}</p>
+                <p className="leading-relaxed max-w-prose" style={{ fontFamily: 'var(--font-body)', fontSize: '.9375rem', color: 'var(--text-muted)' }}>{s.text}</p>
               </div>
             ))}
           </div>
@@ -182,6 +182,6 @@ export default function CarnetPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

@@ -36,10 +36,10 @@ export default function ContactoPage() {
   };
 
   return (
-    <main style={{ background: 'var(--paper)', minHeight: '100vh', paddingTop: '5.5rem' }}>
+    <div className="w-full" style={{ background: 'var(--paper)', minHeight: '100vh', paddingTop: '5.5rem' }}>
 
       {/* Hero */}
-      <section className="py-20 lg:py-24" style={{ background: 'var(--ink)' }}>
+      <section className="py-24 lg:py-32" style={{ background: 'var(--ink)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="section-eyebrow mb-6" style={{ color: 'rgba(255,255,255,.35)' }}>
             <span style={{ background: 'rgba(255,255,255,.2)', height: '2px', width: '2rem', display: 'inline-block', borderRadius: '1px' }} />
@@ -50,7 +50,7 @@ export default function ContactoPage() {
             <br />
             <em style={{ fontStyle: 'italic', color: 'var(--terra)' }}>para ayudarte.</em>
           </h1>
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'rgba(255,255,255,.45)', maxWidth: '36rem', lineHeight: 1.8 }}>
+          <p className="leading-loose max-w-prose" style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'rgba(255,255,255,.4)' }}>
             Respuesta media: 2 horas. También puedes pasarte por la{' '}
             <strong style={{ color: 'rgba(255,255,255,.7)' }}>oficina púrpura</strong> de lunes a viernes.
           </p>
@@ -58,17 +58,17 @@ export default function ContactoPage() {
       </section>
 
       {/* Main grid */}
-      <section className="py-24 lg:py-28">
+      <section className="py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-5 gap-12 items-start">
+          <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
 
             {/* Left: info */}
-            <div className="lg:col-span-2 space-y-6">
+            <div className="lg:col-span-2 space-y-8">
               <div className="card-base p-8" style={{ borderRadius: 'var(--radius-lg)' }}>
                 <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.375rem', color: 'var(--ink)', marginBottom: '2rem' }}>
                   Información de contacto
                 </h2>
-                <div className="space-y-6">
+                <div className="space-y-8">
                   {INFO.map((item) => (
                     <div key={item.label} className="flex items-start gap-4">
                       <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'var(--terra-pale)' }}>
@@ -78,7 +78,7 @@ export default function ContactoPage() {
                         <p style={{ fontFamily: 'var(--font-body)', fontSize: '.75rem', fontWeight: 700, letterSpacing: '.06em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '.35rem' }}>
                           {item.label}
                         </p>
-                        <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'var(--text-secondary)', lineHeight: 1.55 }}>
+                        <p className="leading-relaxed max-w-prose" style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'var(--text-muted)' }}>
                           {item.value}
                         </p>
                       </div>
@@ -125,7 +125,7 @@ export default function ContactoPage() {
                       <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.5rem', color: 'var(--ink)', marginBottom: '.5rem' }}>
                         ¡Mensaje enviado!
                       </p>
-                      <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                      <p className="leading-loose max-w-prose mx-auto" style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'var(--text-muted)' }}>
                         Te responderemos en menos de 2 horas. También puedes llamarnos o pasarte por la oficina.
                       </p>
                     </div>
@@ -135,11 +135,11 @@ export default function ContactoPage() {
                     <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.5rem', color: 'var(--ink)', marginBottom: '.625rem' }}>
                       Envíanos un mensaje
                     </h2>
-                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'var(--text-secondary)', marginBottom: '2.5rem', lineHeight: 1.65 }}>
+                    <p className="leading-relaxed mb-10 max-w-prose" style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'var(--text-muted)' }}>
                       Cuéntanos en qué podemos ayudarte.
                     </p>
-                    <form onSubmit={handleSubmit} className="space-y-5">
-                      <div className="grid sm:grid-cols-2 gap-4">
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      <div className="grid sm:grid-cols-2 gap-6">
                         <div>
                           <label style={{ fontFamily: 'var(--font-body)', fontSize: '.8125rem', fontWeight: 600, color: 'var(--text-secondary)', display: 'block', marginBottom: '.4rem' }}>
                             Nombre *
@@ -178,7 +178,7 @@ export default function ContactoPage() {
                           />
                         </div>
                       </div>
-                      <div className="grid sm:grid-cols-2 gap-4">
+                      <div className="grid sm:grid-cols-2 gap-6">
                         <div>
                           <label style={{ fontFamily: 'var(--font-body)', fontSize: '.8125rem', fontWeight: 600, color: 'var(--text-secondary)', display: 'block', marginBottom: '.4rem' }}>
                             Teléfono
@@ -276,6 +276,6 @@ export default function ContactoPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

@@ -51,10 +51,10 @@ const PROXIMOS = [
 
 export default function ActividadesPage() {
   return (
-    <main style={{ background: 'var(--paper)', minHeight: '100vh', paddingTop: '5.5rem' }}>
+    <div className="w-full" style={{ background: 'var(--paper)', minHeight: '100vh', paddingTop: '5.5rem' }}>
 
       {/* Hero */}
-      <section className="py-20 lg:py-24" style={{ background: 'var(--ink)', position: 'relative', overflow: 'hidden' }}>
+      <section className="py-24 lg:py-32" style={{ background: 'var(--ink)', position: 'relative', overflow: 'hidden' }}>
         <div className="absolute top-0 right-0 w-[500px] h-[500px] pointer-events-none"
           style={{ background: 'radial-gradient(circle, rgba(217,94,42,.1) 0%, transparent 65%)', transform: 'translate(15%, -15%)' }} />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] pointer-events-none"
@@ -64,14 +64,14 @@ export default function ActividadesPage() {
             <span style={{ background: 'rgba(255,255,255,.2)', height: '2px', width: '2rem', display: 'inline-block', borderRadius: '1px' }} />
             Actividades & Fiestas
           </p>
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <div>
               <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem,5vw,4rem)', fontWeight: 800, color: '#fff', lineHeight: 1.08, marginBottom: '1.5rem' }}>
                 Vive Valencia
                 <br />
                 <em style={{ fontStyle: 'italic', color: 'var(--terra)' }}>al máximo.</em>
               </h1>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'rgba(255,255,255,.5)', lineHeight: 1.8, marginBottom: '2.5rem' }}>
+              <p className="leading-loose max-w-prose mb-10" style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'rgba(255,255,255,.45)' }}>
                 Fiestas, excursiones, viajes y actividades culturales. Organizado por el equipo de Erasmus Life desde 2007 para que tu semestre en Valencia sea inolvidable.
               </p>
               <div className="flex gap-4">
@@ -86,16 +86,16 @@ export default function ActividadesPage() {
                 </Link>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-2 gap-6">
               {[
                 ['Fiestas', 'mensuales'],
                 ['Excursiones', 'a toda España'],
                 ['Cultura', 'con descuento'],
                 ['Viajes', 'con seguro'],
               ].map(([v, l]) => (
-                <div key={v} className="px-6 py-6 rounded-2xl" style={{ background: 'rgba(255,255,255,.05)', border: '1px solid rgba(255,255,255,.08)' }}>
+                <div key={v} className="px-8 py-8 rounded-2xl" style={{ background: 'rgba(255,255,255,.05)', border: '1px solid rgba(255,255,255,.08)' }}>
                   <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.375rem', color: '#fff', lineHeight: 1, fontStyle: 'italic' }}>{v}</p>
-                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '.875rem', color: 'rgba(255,255,255,.4)', marginTop: '.5rem' }}>{l}</p>
+                  <p className="mt-2 leading-relaxed" style={{ fontFamily: 'var(--font-body)', fontSize: '.875rem', color: 'rgba(255,255,255,.35)' }}>{l}</p>
                 </div>
               ))}
             </div>
@@ -104,9 +104,9 @@ export default function ActividadesPage() {
       </section>
 
       {/* Próximos eventos */}
-      <section className="py-20 lg:py-24" style={{ background: 'var(--paper-2)' }}>
+      <section className="py-24 lg:py-32" style={{ background: 'var(--paper-2)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-12">
+          <div className="flex items-center justify-between mb-16">
             <div>
               <p className="section-eyebrow mb-3">Agenda</p>
               <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(1.5rem,2.5vw,2rem)', color: 'var(--ink)', lineHeight: 1.2 }}>
@@ -114,9 +114,9 @@ export default function ActividadesPage() {
               </h2>
             </div>
           </div>
-          <div className="space-y-4">
+          <div className="space-y-6">
             {PROXIMOS.map((e, i) => (
-              <div key={i} className="card-base p-7 flex flex-col sm:flex-row sm:items-center gap-5" style={{ borderRadius: 'var(--radius-lg)' }}>
+              <div key={i} className="card-base p-8 flex flex-col sm:flex-row sm:items-center gap-6" style={{ borderRadius: 'var(--radius-lg)' }}>
                 <div className="flex items-center gap-3 shrink-0 min-w-[9rem]">
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'var(--terra-pale)' }}>
                     <Calendar className="w-5 h-5" style={{ color: 'var(--terra)' }} />
@@ -125,7 +125,7 @@ export default function ActividadesPage() {
                 </div>
                 <div className="flex-1">
                   <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1rem', color: 'var(--ink)', lineHeight: 1.2 }}>{e.titulo}</p>
-                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '.8125rem', color: 'var(--text-secondary)', marginTop: '.2rem' }}>{e.lugar}</p>
+                  <p className="mt-1 leading-relaxed" style={{ fontFamily: 'var(--font-body)', fontSize: '.8125rem', color: 'var(--text-muted)' }}>{e.lugar}</p>
                 </div>
                 <div className="flex items-center gap-3 shrink-0">
                   <span style={{
@@ -151,16 +151,16 @@ export default function ActividadesPage() {
       </section>
 
       {/* Categorías */}
-      <section className="py-24 lg:py-28">
+      <section className="py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-20 lg:mb-24">
             <p className="section-eyebrow mb-5 justify-center">Lo que ofrecemos</p>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem,3.5vw,3rem)', fontWeight: 700, color: 'var(--ink)', lineHeight: 1.1 }}>
               Algo para cada{' '}
               <em style={{ fontStyle: 'italic', color: 'var(--terra)' }}>tipo de erasmus.</em>
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
             {CATEGORIAS.map((cat) => (
               <div key={cat.titulo} className="card-base overflow-hidden" style={{ borderRadius: 'var(--radius-lg)' }}>
                 <div className={`bg-gradient-to-br ${cat.color} px-8 py-10 relative`}>
@@ -174,17 +174,17 @@ export default function ActividadesPage() {
                     <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.5rem', color: '#fff', lineHeight: 1.2, marginBottom: '.75rem' }}>
                       {cat.titulo}
                     </h3>
-                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '.9375rem', color: 'rgba(255,255,255,.6)', lineHeight: 1.75 }}>
+                    <p className="leading-relaxed max-w-prose" style={{ fontFamily: 'var(--font-body)', fontSize: '.9375rem', color: 'rgba(255,255,255,.55)' }}>
                       {cat.descripcion}
                     </p>
                   </div>
                 </div>
                 <div className="p-8">
-                  <ul className="space-y-3 mb-6">
+                  <ul className="space-y-4 mb-8">
                     {cat.items.map((item) => (
                       <li key={item} className="flex items-center gap-3">
                         <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: 'var(--terra)' }} />
-                        <span style={{ fontFamily: 'var(--font-body)', fontSize: '.9375rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>{item}</span>
+                        <span className="leading-relaxed" style={{ fontFamily: 'var(--font-body)', fontSize: '.9375rem', color: 'var(--text-muted)' }}>{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -200,6 +200,6 @@ export default function ActividadesPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

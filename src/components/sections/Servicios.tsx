@@ -44,11 +44,11 @@ const ITEMS = [
 
 export default function Servicios() {
   return (
-    <section className="py-24 lg:py-28" style={{ background: 'var(--paper)' }}>
+    <section className="py-24 lg:py-32" style={{ background: 'var(--paper)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-10 mb-20">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-20 lg:mb-24">
           <div>
             <p className="section-eyebrow mb-5">Nuestros servicios</p>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.25rem,4vw,3.5rem)', fontWeight: 700, color: 'var(--ink)', maxWidth: '26rem', lineHeight: 1.12 }}>
@@ -57,14 +57,14 @@ export default function Servicios() {
               en Valencia.
             </h2>
           </div>
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'var(--text-secondary)', maxWidth: '26rem', lineHeight: 1.75 }}>
+          <p className="max-w-prose leading-relaxed" style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'var(--text-muted)' }}>
             Desde que aterrizas hasta que te vas, acompañamos a más de 50.000 estudiantes
             internacionales cada año desde 2007.
           </p>
         </div>
 
         {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {ITEMS.map(({ Icon, label, href, desc, badge, badgeClass, accent }) => (
             <Link
               key={href} href={href}
@@ -88,11 +88,11 @@ export default function Servicios() {
               >
                 {label}
               </h3>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '.9rem', color: 'var(--text-secondary)', lineHeight: 1.75, flex: 1 }}>
+              <p className="leading-relaxed" style={{ fontFamily: 'var(--font-body)', fontSize: '.9rem', color: 'var(--text-muted)', flex: 1 }}>
                 {desc}
               </p>
 
-              <div className="flex items-center gap-1.5 mt-6" style={{ color: 'var(--terra)', fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: '.8125rem' }}>
+              <div className="flex items-center gap-1.5 mt-8" style={{ color: 'var(--terra)', fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: '.8125rem' }}>
                 Ver más
                 <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
               </div>
@@ -109,7 +109,7 @@ export default function Servicios() {
               <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.25rem', color: '#fff', lineHeight: 1.3, marginBottom: '1rem' }}>
                 El equipo te responde hoy
               </p>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '.9rem', color: 'rgba(255,255,255,.5)', lineHeight: 1.7 }}>
+              <p className="leading-relaxed" style={{ fontFamily: 'var(--font-body)', fontSize: '.9rem', color: 'rgba(255,255,255,.4)' }}>
                 Lun–Vie 10:00–18:00
               </p>
             </div>

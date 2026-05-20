@@ -16,7 +16,7 @@ export default function Hero() {
 
         <div className="flex-1 flex items-center">
           <div className="max-w-7xl mx-auto px-6 w-full py-16 lg:py-24">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
 
               {/* ── Left col: headline + CTA ── */}
               <div>
@@ -50,14 +50,11 @@ export default function Hero() {
                 </h1>
 
                 <p
-                  className="reveal d2"
+                  className="reveal d2 mt-6 max-w-prose leading-relaxed"
                   style={{
                     fontFamily: 'var(--font-body)',
                     fontSize: '1.125rem',
-                    color: 'rgba(255,255,255,.55)',
-                    lineHeight: 1.7,
-                    maxWidth: '30rem',
-                    marginTop: '1.5rem',
+                    color: 'rgba(255,255,255,.5)',
                   }}
                 >
                   Pisos sin comisiones, actividades semanales, viajes a toda España

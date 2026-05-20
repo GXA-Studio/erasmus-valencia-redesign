@@ -67,7 +67,7 @@ function PisoCard({ p, featured = false }: { p: typeof PISOS[0]; featured?: bool
           <span style={{ fontFamily: 'var(--font-body)', fontSize: '.875rem', color: 'var(--text-secondary)' }}>{p.zona}</span>
         </div>
 
-        <p style={{ fontFamily: 'var(--font-body)', fontSize: '.9rem', color: 'var(--text-secondary)', lineHeight: 1.75, flex: 1, marginBottom: '1.25rem' }}>
+        <p className="leading-relaxed mb-5" style={{ fontFamily: 'var(--font-body)', fontSize: '.9rem', color: 'var(--text-muted)', flex: 1 }}>
           {p.descripcion}
         </p>
 
@@ -96,11 +96,11 @@ function PisoCard({ p, featured = false }: { p: typeof PISOS[0]; featured?: bool
 
 export default function Pisos() {
   return (
-    <section className="py-24 lg:py-28" style={{ background: 'var(--ink)' }}>
+    <section className="py-24 lg:py-32" style={{ background: 'var(--ink)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-10 mb-20">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-20 lg:mb-24">
           <div>
             <p className="section-eyebrow mb-5" style={{ color: 'rgba(255,255,255,.35)' }}>
               <span style={{ background: 'rgba(255,255,255,.25)', height: '2px', width: '2rem', display: 'inline-block', borderRadius: '1px' }} />
@@ -112,8 +112,8 @@ export default function Pisos() {
               <em style={{ fontStyle: 'italic', color: 'var(--terra)' }}>sin comisiones.</em>
             </h2>
           </div>
-          <div className="flex flex-col items-start md:items-end gap-5">
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'rgba(255,255,255,.45)', maxWidth: '24rem', textAlign: 'right', lineHeight: 1.75 }}>
+          <div className="flex flex-col items-start md:items-end gap-6">
+            <p className="max-w-prose leading-relaxed" style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'rgba(255,255,255,.4)', textAlign: 'right' }}>
               7 propiedades en Blasco Ibáñez y zona universitaria. Disponibilidad por semestres.
             </p>
             <Link href="/pisos" className="btn btn-terra btn-sm">
@@ -124,7 +124,7 @@ export default function Pisos() {
         </div>
 
         {/* Grid — first 3 featured, rest normal */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {PISOS.slice(0, 6).map((p, i) => (
             <PisoCard key={p.id} p={p} featured={i < 3} />
           ))}
@@ -132,14 +132,14 @@ export default function Pisos() {
 
         {/* Bottom CTA band */}
         <div
-          className="mt-14 rounded-2xl px-10 py-10 flex flex-col md:flex-row items-center justify-between gap-8"
+          className="mt-16 lg:mt-20 rounded-2xl px-10 py-12 flex flex-col md:flex-row items-center justify-between gap-8"
           style={{ background: 'rgba(217,94,42,.12)', border: '1px solid rgba(217,94,42,.25)' }}
         >
           <div>
             <p style={{ fontFamily: 'var(--font-display)', fontSize: '1.375rem', fontWeight: 700, color: '#fff' }}>
               ¿No encuentras lo que buscas?
             </p>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'rgba(255,255,255,.5)', marginTop: '.5rem', lineHeight: 1.65 }}>
+            <p className="mt-2 leading-relaxed max-w-prose" style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'rgba(255,255,255,.45)' }}>
               Cuéntanos qué necesitas y te encontramos el piso perfecto.
             </p>
           </div>

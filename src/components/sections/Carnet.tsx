@@ -4,25 +4,25 @@ import { CARNETS } from '@/data/content';
 
 export default function Carnet() {
   return (
-    <section className="py-24 lg:py-28" style={{ background: 'var(--paper)' }}>
+    <section className="py-24 lg:py-32" style={{ background: 'var(--paper)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-20">
+        <div className="text-center max-w-prose mx-auto mb-20 lg:mb-24">
           <p className="section-eyebrow mb-5 justify-center">Carnet Erasmus Life</p>
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem,4vw,3.25rem)', fontWeight: 700, color: 'var(--ink)', lineHeight: 1.1 }}>
             Tres niveles.
             <br />
             <em style={{ fontStyle: 'italic', color: 'var(--terra)' }}>Cientos de descuentos.</em>
           </h2>
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'var(--text-secondary)', marginTop: '1.25rem', lineHeight: 1.75 }}>
+          <p className="mt-6 leading-relaxed" style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', color: 'var(--text-muted)' }}>
             Oceanogràfic, Bioparc, discotecas, tiendas y mucho más.
             El carnet GOLD incluye descuentos de hasta 10€ en viajes largos y cancelación con reembolso.
           </p>
         </div>
 
         {/* Pricing grid */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-10 max-w-4xl mx-auto">
           {CARNETS.map((c) => (
             <div
               key={c.nombre}
@@ -73,19 +73,19 @@ export default function Carnet() {
                     {c.periodo}
                   </p>
                 )}
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '.9375rem', color: c.highlight ? 'rgba(255,255,255,.55)' : 'var(--text-secondary)', lineHeight: 1.75, marginBottom: '1.75rem' }}>
+                <p className="leading-relaxed mb-7" style={{ fontFamily: 'var(--font-body)', fontSize: '.9375rem', color: c.highlight ? 'rgba(255,255,255,.45)' : 'var(--text-muted)' }}>
                   {c.descripcion}
                 </p>
 
                 {/* Benefits */}
-                <ul className="space-y-3.5 flex-1 mb-8">
+                <ul className="space-y-4 flex-1 mb-8">
                   {c.beneficios.map((b) => (
                     <li key={b} className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5"
                         style={{ background: c.highlight ? 'rgba(217,94,42,.2)' : 'var(--terra-pale)' }}>
                         <Check className="w-3 h-3" style={{ color: 'var(--terra)' }} />
                       </div>
-                      <span style={{ fontFamily: 'var(--font-body)', fontSize: '.9rem', lineHeight: 1.6, color: c.highlight ? 'rgba(255,255,255,.7)' : 'var(--text-secondary)' }}>
+                      <span className="leading-relaxed" style={{ fontFamily: 'var(--font-body)', fontSize: '.9rem', color: c.highlight ? 'rgba(255,255,255,.65)' : 'var(--text-muted)' }}>
                         {b}
                       </span>
                     </li>
@@ -104,7 +104,7 @@ export default function Carnet() {
         </div>
 
         {/* Trust note */}
-        <p className="text-center mt-12" style={{ fontFamily: 'var(--font-body)', fontSize: '.875rem', color: 'var(--text-muted)' }}>
+        <p className="text-center mt-16" style={{ fontFamily: 'var(--font-body)', fontSize: '.875rem', color: 'var(--text-muted)' }}>
           Recoge tu carnet en nuestra <strong style={{ color: 'var(--text-secondary)' }}>oficina púrpura</strong> — Calle Ramón Llull 21 bajo, Valencia
         </p>
       </div>

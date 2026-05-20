@@ -2,10 +2,10 @@ import { TESTIMONIALS, STATS } from '@/data/content';
 
 export default function Testimonials() {
   return (
-    <section className="py-24 lg:py-28" style={{ background: 'var(--ink)', overflow: 'hidden' }}>
+    <section className="py-24 lg:py-32" style={{ background: 'var(--ink)', overflow: 'hidden' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-20 lg:gap-24 items-center">
           {/* Left: headline + stats */}
           <div>
             <p className="section-eyebrow mb-7" style={{ color: 'rgba(255,255,255,.35)' }}>
@@ -35,31 +35,31 @@ export default function Testimonials() {
             </div>
 
             {/* Mini stats */}
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-2 gap-6">
               {[
                 ['98%', 'Recomendarían Erasmus Life'],
                 ['2h', 'Tiempo medio de respuesta'],
                 ['7', 'Ciudades en España'],
                 ['2007', 'Año de fundación'],
               ].map(([v, l]) => (
-                <div key={l} className="px-5 py-5 rounded-xl" style={{ background: 'rgba(255,255,255,.05)', border: '1px solid rgba(255,255,255,.08)' }}>
+                <div key={l} className="px-6 py-6 rounded-xl" style={{ background: 'rgba(255,255,255,.05)', border: '1px solid rgba(255,255,255,.08)' }}>
                   <p className="num-stat" style={{ fontSize: '1.75rem', color: '#fff', lineHeight: 1 }}>{v}</p>
-                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '.875rem', color: 'rgba(255,255,255,.45)', marginTop: '.5rem', lineHeight: 1.5 }}>{l}</p>
+                  <p className="mt-2 leading-relaxed" style={{ fontFamily: 'var(--font-body)', fontSize: '.875rem', color: 'rgba(255,255,255,.4)' }}>{l}</p>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Right: testimonial cards */}
-          <div className="grid sm:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-8">
             {TESTIMONIALS.map((t, i) => (
               <div
                 key={i}
-                className={`p-7 rounded-2xl flex flex-col ${i === 1 ? 'sm:mt-10' : ''}`}
+                className={`p-8 rounded-2xl flex flex-col ${i === 1 ? 'sm:mt-10' : ''}`}
                 style={{ background: 'rgba(255,255,255,.05)', border: '1px solid rgba(255,255,255,.08)' }}
               >
                 {/* Quote */}
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '.9375rem', color: 'rgba(255,255,255,.65)', lineHeight: 1.8, flex: 1, fontStyle: 'italic', marginBottom: '1.5rem' }}>
+                <p className="leading-loose mb-6 max-w-prose" style={{ fontFamily: 'var(--font-body)', fontSize: '.9375rem', color: 'rgba(255,255,255,.6)', flex: 1, fontStyle: 'italic' }}>
                   "{t.text}"
                 </p>
 
