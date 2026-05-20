@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, Home, BedDouble, Bath, MapPin } from 'lucide-react';
+import { ArrowRight, Home, BedDouble, MapPin } from 'lucide-react';
 import { PISOS } from '@/data/content';
 
 function PisoCard({ p, featured = false }: { p: typeof PISOS[0]; featured?: boolean }) {
